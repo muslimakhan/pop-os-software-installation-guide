@@ -205,6 +205,14 @@ cd /Downloads
 ```
 
 ```shell
+php composer.phar
+```
+
+```shell
+sudo chmod 755 composer.phar
+```
+
+```shell
 sudo mv composer.phar /usr/bin/composer
 ```
 

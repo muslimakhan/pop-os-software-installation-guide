@@ -1,117 +1,294 @@
+# POS OS Software Installation Guide
+
+<b>Initial Updates</b>
+```shell
 sudo apt update
+```
+```shell
 sudo apt upgrade
+```
 
-https://jacci.net/linux/pop-os/how-to-install-grub-on-pop-os-20-04/
+<b>Grub Installation for dual OS</b>
+<p>https://jacci.net/linux/pop-os/how-to-install-grub-on-pop-os-20-04/</p>
+
+```shell
 sudo apt install grub-efi grub2-common
+```
 
+```shell
 sudo grub-install
+```
 
-Due to a bad install of grub, it is needed to copy grub.efi to the to the appropriate folder and overwrite. As follows.
+<p>Due to a bad install of grub, it is needed to copy grub.efi to the to the appropriate folder and overwrite. As follows.</p>
+
+```shell
 sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/pop/grubx64.efi
+```
 
 https://askubuntu.com/questions/761563/ubuntu-16-04-cant-install-grub-customizer
+
+```shell
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+```
+
+```shell
 sudo apt-get update
+```
+```shell
 sudo apt-get install grub-customizer
+```
 
-open grub-customizer
+<p>open now grub-customizer</p>
 
-OUTPUT_FILE:
-/boot/grub/grub.cfg => /boot/efi/EFI/pop/grub.cfg
+```shell
+grub-customizer
+```
+
+<p>Set this config in grub-cutomizer window:</p>
+<p>Change OUTPUT_FILE:</p>
+<p>/boot/grub/grub.cfg => /boot/efi/EFI/pop/grub.cfg</p>
 
 
+<b>Chrome</b>
+<p>Download from https://www.google.com/chrome/</p>
 
-Slack 
-Chrome
-=>All above from sites
-
-VirtualBox
+<b>VirtualBox</b>
+```shell
 sudo apt install virtualbox
+```
 
-Vagrant 
+<b>Vagrant</b>
+
+```shell
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+```
+
+```shell
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+```
+
+```shell
 sudo apt-get update && sudo apt-get install vagrant
+```
 
-phpStorm
-download
-https://www.jetbrains.com/phpstorm/download/#section=linux
-cd /Downloads
-https://linuxhint.com/install-phpstorm-ubuntu-linux/
-tar -xvf PhpStorm-2020.3.1.tar.gz
-copy Downloads to Home directory
-rename PhpStorm-203.6882.180 to PhpStorm
-cd PhpStorm/bin 
-./phpstorm.sh
+<b>Apache2 Installation</b>
 
-Desktop Icons
-https://linuxhint.com/customize-desktop-pop-os/
-sudo apt install gnome-tweaks
-sudo apt install gnome-shell-extensions -y
-
-Apache2 Installation
+```shell
 sudo apt install apache2
+```
+
+```shell
 sudo /etc/init.d/apache2 start
+```
 
-Git 
+<b>Git</b>
+
+```shell
 sudo apt-get install git
+```
 
-PHP 7.4 
-https://tecadmin.net/install-php-ubuntu-20-04/
+<b>PHP 7.4</b> 
+<p>https://tecadmin.net/install-php-ubuntu-20-04/</p>
+
+```shell
 sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https 
+```
+```shell
 LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+```
+
+```shell
 sudo apt update
+```
+
+```shell
 sudo apt install php7.4 
+```
+
+```shell
 sudo apt install php7.4-mysql php7.4-mbstring php7.4-xml php7.4-curl php-common
+```
+
+```shell
 sudo apt install php-fpm php7.4-fpm php7.2-fpm php5.6-fpm
+```
+
+```shell
 sudo apt install php-pear
+```
+
+```shell
 sudo update-alternatives --config php
+```
 
+<p>Project folder permission</p>
 
+```shell
 /var/www/html$ cd ..
+```
+
+```shell
 /var/www$ sudo chmod 777 -R html
+```
 
-MySQL
+<b>MySQL</b>
+
+```shell
 sudo apt update
+```
+
+```shell
 sudo apt install mysql-server
+```
+
+```shell
 sudo systemctl start mysql.service
+```
 
-Configuring MySQL
+<b>Configuring MySQL</b>
+
+```shell
 sudo mysql_secure_installation
+```
+<p>or</p>
 
-or 
+```shell
 sudo mysql
+```
+
+```shell
 SELECT user,authentication_string,plugin,host FROM mysql.user;
+```
+
+```shell
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
+```shell
 FLUSH PRIVILEGES;
+```
+
+```shell
 SELECT user,authentication_string,plugin,host FROM mysql.user;
+```
+
+```shell
 exit
+```
+
+```shell
 sudo mysql_secure_installation
+```
 
-PHPMyAdmin
+<b>PHPMyAdmin</b>
+
+```shell
 sudo apt install phpmyadmin
+```
 
-https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/generate-ssh-key-pair.html
+<b>SSH Key Generate</b>
+<p>https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/generate-ssh-key-pair.html</p>
+
+```shell
 ssh-keygen -t rsa
+```
+
+```shell
 ssh-keygen -b 2048 -t rsa
+```
 
-Composer 
-Download from https://getcomposer.org/download/ latest version file composer.phar
+<b>Composer</b>
+<p>Download from https://getcomposer.org/download/ latest version file composer.phar</p>
+
+```shell
 cd /Downloads
+```
+
+```shell
 sudo mv composer.phar /usr/bin/composer
+```
 
+<b>Slack</b> 
+<p>Dowload from https://slack.com/</p>
 
-Phpstorm plugins:-
-.env files support
-.ignore
-Atom Material Icons
-CSV
-Git Flow Integration
-sudo apt-get install git-flow
-Key Promoter X
-PHP Annotation
-PHP Inspection (EA Extended)
-PHP Toolbox
-Rainbow Brackets
-Yii2 Support
+<b>PhpStorm</b>
+<p>Download from https://www.jetbrains.com/phpstorm/download/#section=linux</p>
 
+```shell
+cd /Downloads
+```
+
+<p>https://linuxhint.com/install-phpstorm-ubuntu-linux/</p>
+
+```shell
+tar -xvf PhpStorm-2020.3.1.tar.gz
+```
+
+<p>copy Downloads to Home directory</p>
+<p>rename PhpStorm-203.6882.180 to PhpStorm</p>
+
+```shell
+cd PhpStorm/bin
+```
+
+```shell
+./phpstorm.sh
+```
+
+<b>Phpstorm plugins:-</b>
+<ol>
+  <li>.env files support</li>
+  <li>.ignore</li>
+  <li>Atom Material Icons</li>
+  <li>CSV</li>
+  <li>Git Flow Integration</li>
+  <li>sudo apt-get install git-flow</li>
+  <li>Key Promoter X</li>
+  <li>PHP Annotation</li>
+  <li>PHP Inspection (EA Extended)</li>
+  <li>PHP Toolbox</li>
+  <li>Rainbow Brackets</li>
+  <li>Yii2 Support</li>
+</ol>
+
+<b>PostMan</b>
+<p>Download from https://www.postman.com/downloads/ and install</p>
+
+<b>Desktop Icons</b>
+<p>https://linuxhint.com/customize-desktop-pop-os/</p>
+
+```shell
+sudo apt install gnome-tweaks
+```
+
+```shell
+sudo apt install gnome-shell-extensions -y
+```
+
+<p>PhpStorm Desktop Icon</p>
+<p>Open Text Edit and save below with PhpStorm.desktop</p>
+
+```desktop
+[Desktop Entry]
+Name=PHPStorm
+Type=Application
+Terminal=false
+Icon=/home/{username}/PhpStorm/bin/phpstorm.png
+Exec=/home/{username}/PhpStorm/bin/phpstorm.sh
+Categories=Development
+```
+
+<p>PostMan Desktop Icon<p>
+<p>Open Text Edit and save below with PostMan.desktop</p>
+
+```desktop
+[Desktop Entry]
+Name=PostMan
+Comment=PostMan
+Keywords=post;chrome;postman
+Exec=/home/muslimahmad/Postman/Postman
+Icon=/home/muslimahmad/Postman/app/icons/icon_128x128.png
+Terminal=false
+Type=Application
+Categories=softwares
+```

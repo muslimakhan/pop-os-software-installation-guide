@@ -316,6 +316,20 @@ sudo apt install gnome-shell-extensions -y
 <p>PhpStorm Desktop Icon</p>
 <p>Open Text Edit and save below with PhpStorm.desktop</p>
 
+<b>PhpStorm PHP Quality Tools</b>
+https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
+
+1. PHP Code Sniffer
+   https://github.com/squizlabs/PHP_CodeSniffer
+   
+2. Mess Detector 
+  https://github.com/phpmd/phpmd/releases/tag/2.10.2
+<p>After unzip, run composer</p>
+```shell
+  composer install
+```
+3. and so on.
+
 ```desktop
 [Desktop Entry]
 Name=PHPStorm

@@ -259,6 +259,46 @@ cd PhpStorm/bin
   <li>Yii2 Support</li>
 </ol>
 
+<b>.htaccess enable</b>
+<p>https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-20-04</p>
+
+```shell
+sudo a2enmod rewrite
+```
+
+```shell
+sudo service apache2 restart
+```
+
+<p>Open the default Apache configuration file using nano or your favorite text editor.</p>
+
+```shell
+sudo cd /etc/apache2/sites-available
+```
+
+```shell
+sudo nano 000-default.conf
+```
+
+<p>Add these below lines and save file.<p>
+  
+  ```conf
+  <VirtualHost *:80>
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+    
+    . . .
+</VirtualHost>
+  ```
+
+  ```shell
+  sudo /etc/init.d/apache2 restart
+  ```
+  
+
 <b>PostMan</b>
 <p>Download from https://www.postman.com/downloads/ and install</p>
 

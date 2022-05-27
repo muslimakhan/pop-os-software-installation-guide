@@ -285,7 +285,7 @@ sudo nano 000-default.conf
   ```conf
   <VirtualHost *:80>
     <Directory /var/www/html>
-        Options Indexes FollowSymLinks MultiViews
+        Options Indexes FollowSymLinks
         AllowOverride All
         Require all granted
     </Directory>

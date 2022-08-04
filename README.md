@@ -324,6 +324,17 @@ https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
    
 2. Mess Detector 
   https://github.com/phpmd/phpmd/releases/tag/2.10.2
+  https://phpmd.org/download/index.html
+
+3. Psalm
+   https://psalm.dev/docs/running_psalm/installation/
+
+4. PHP Stan
+   https://phpstan.org/user-guide/getting-started
+
+5. PHP CS Fixer
+   https://github.com/FriendsOfPHP/PHP-CS-Fixer
+
 <p>After unzip, run composer</p>
 ```shell
   composer install

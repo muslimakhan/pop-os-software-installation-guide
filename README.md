@@ -328,9 +328,11 @@ https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
 
 3. Psalm
    https://psalm.dev/docs/running_psalm/installation/
+   Config: https://psalm.dev/docs/running_psalm/configuration/
 
 4. PHP Stan
    https://phpstan.org/user-guide/getting-started
+   Config: https://phpstan.org/config-reference#config-file
 
 5. PHP CS Fixer
    https://github.com/FriendsOfPHP/PHP-CS-Fixer
